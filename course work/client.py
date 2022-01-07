@@ -32,18 +32,14 @@ async def main():
         action = input("\n1 - connect to 1 server \n2 - connect to 2 server\nexit - Exit\n\n").split()
         if action and action[0] == '1':
             if len(action) != 1:
-                server1_task = asyncio.create_task(cServer1(action[1]))
-                await server1_task
+                asyncio.create_task(cServer1(action[1]))
             else:
-                server1_task = asyncio.create_task(cServer1())
-                await server1_task
+                asyncio.create_task(cServer1())
         if action and action[0] == '2':
             if len(action) != 1:
-                server2_task = asyncio.create_task(cServer2(action[1]))
-                await server2_task
+                asyncio.create_task(cServer2(action[1]))
             else:
-                server2_task = asyncio.create_task(cServer2())
-                await server2_task
+                asyncio.create_task(cServer2())
         if action and action[0] == 'exit':
             break
 
